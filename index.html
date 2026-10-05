@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,43 @@
     <title>PPE | Pioneer Projects Executer</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #ffffff;
             color: #222222;
         }
 
-        /* HEADER */
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
             height: 90px;
             padding: 0 7%;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
+
             background: #ffffff;
+
             border-bottom: 1px solid #eeeeee;
         }
 
         .logo {
             width: 190px;
+            height: auto;
         }
 
         nav {
@@ -42,9 +55,13 @@
 
         nav a {
             text-decoration: none;
+
             color: #333333;
+
             font-size: 14px;
             font-weight: 600;
+
+            transition: 0.3s;
         }
 
         nav a:hover {
@@ -53,66 +70,212 @@
 
         .language {
             border: 1px solid #1769aa;
+
             color: #1769aa;
+
             padding: 9px 15px;
-            text-decoration: none;
+
             font-size: 13px;
         }
 
-        /* HERO */
-        .hero {
-            min-height: calc(100vh - 90px);
-            display: flex;
-            align-items: center;
-            padding: 8%;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(15, 45, 75, 0.95),
-                    rgba(15, 45, 75, 0.72)
-                );
+        .language:hover {
+            background: #1769aa;
             color: white;
         }
 
-        .hero-content {
-            max-width: 850px;
+
+        /* =========================
+           ABOUT PIONEERS HERO
+        ========================= */
+
+        .hero {
+            min-height: calc(100vh - 90px);
+
+            display: flex;
+            align-items: center;
+
+            padding: 7%;
+
+            position: relative;
+            overflow: hidden;
+
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    #153b5c 0%,
+                    #245475 55%,
+                    #71889b 100%
+                );
         }
 
-        .small-title {
-            font-size: 13px;
-            letter-spacing: 4px;
-            margin-bottom: 25px;
-            opacity: 0.8;
+
+        /* Background decoration */
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            right: -200px;
+            top: -200px;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            transform: rotate(45deg);
         }
+
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            right: 80px;
+            bottom: -220px;
+
+            border: 1px solid rgba(255,255,255,0.10);
+
+            transform: rotate(45deg);
+        }
+
+
+        .hero-content {
+            max-width: 900px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .section-name {
+            font-size: 13px;
+
+            font-weight: 600;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 30px;
+
+            color: rgba(255,255,255,0.8);
+        }
+
 
         h1 {
-            font-size: clamp(55px, 8vw, 110px);
-            line-height: 0.95;
-            margin-bottom: 30px;
+            font-size: clamp(55px, 8vw, 105px);
+
+            line-height: 0.93;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 35px;
         }
 
-        h1 span {
+
+        h1 .light {
             font-weight: 300;
         }
 
-        .hero p {
-            max-width: 600px;
+
+        .description {
+            max-width: 680px;
+
             font-size: 18px;
-            line-height: 1.7;
+
+            line-height: 1.8;
+
+            color: rgba(255,255,255,0.90);
+
             margin-bottom: 40px;
         }
 
-        .button {
+
+        .discover-button {
             display: inline-block;
-            background: white;
+
+            padding: 16px 30px;
+
+            background: #ffffff;
+
             color: #1769aa;
-            padding: 15px 28px;
+
             text-decoration: none;
+
+            font-size: 13px;
+
             font-weight: bold;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
         }
 
+
+        .discover-button:hover {
+            background: #1769aa;
+
+            color: #ffffff;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           SMALL LABEL
+        ========================= */
+
+        .company-label {
+            position: absolute;
+
+            right: 7%;
+            bottom: 7%;
+
+            z-index: 2;
+
+            text-align: right;
+
+            border-top: 1px solid rgba(255,255,255,0.4);
+
+            padding-top: 15px;
+
+            width: 210px;
+        }
+
+
+        .company-label span {
+            display: block;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            color: rgba(255,255,255,0.65);
+
+            margin-bottom: 8px;
+        }
+
+
+        .company-label strong {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 800px) {
+
             header {
+                height: 75px;
                 padding: 0 5%;
             }
 
@@ -120,69 +283,170 @@
                 width: 140px;
             }
 
-            nav a {
+            nav {
+                gap: 10px;
+            }
+
+            nav a:not(.language) {
                 display: none;
             }
 
             .hero {
-                padding: 10% 6%;
+                min-height: calc(100vh - 75px);
+
+                padding: 12% 6% 25%;
+            }
+
+            .section-name {
+                font-size: 11px;
+
+                letter-spacing: 3px;
             }
 
             h1 {
-                font-size: 55px;
+                font-size: 54px;
+
+                line-height: 0.98;
+
+                letter-spacing: -2px;
             }
+
+            .description {
+                font-size: 15px;
+
+                line-height: 1.7;
+            }
+
+            .company-label {
+                left: 6%;
+                right: auto;
+
+                bottom: 5%;
+
+                text-align: left;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
-<header>
 
-    <img src="ppe-logo.avif"
-         alt="Pioneer Projects Executer"
-         class="logo">
+    <!-- HEADER -->
 
-    <nav>
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#services">SERVICES</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#contact">CONTACT</a>
+    <header>
 
-        <a href="#" class="language">العربية</a>
-    </nav>
+        <img
+            src="ppe-logo.avif"
+            alt="Pioneer Projects Executer"
+            class="logo"
+        >
 
-</header>
+        <nav>
+
+            <a href="#home">
+                HOME
+            </a>
+
+            <a href="#about">
+                ABOUT
+            </a>
+
+            <a href="#services">
+                SERVICES
+            </a>
+
+            <a href="#projects">
+                PROJECTS
+            </a>
+
+            <a href="#contact">
+                CONTACT
+            </a>
+
+            <a href="#" class="language">
+                العربية
+            </a>
+
+        </nav>
+
+    </header>
 
 
-<section class="hero" id="home">
 
-    <div class="hero-content">
+    <!-- ABOUT PIONEERS -->
 
-        <p class="small-title">
-            DESIGN • CONSTRUCTION • FIT-OUT
-        </p>
+    <section class="hero" id="home">
 
-        <h1>
-            WE BUILD<br>
-            <span>WHAT YOU</span><br>
-            BELIEVE IN.
-        </h1>
 
-        <p>
-            Pioneer Projects Executer delivers integrated
-            design, construction and fit-out solutions
-            across Saudi Arabia.
-        </p>
+        <div class="hero-content">
 
-        <a href="#projects" class="button">
-            EXPLORE OUR PROJECTS →
-        </a>
 
-    </div>
+            <p class="section-name">
 
-</section>
+                ABOUT PIONEERS
+
+            </p>
+
+
+            <h1>
+
+                PIONEER<br>
+
+                <span class="light">
+                    PROJECTS
+                </span><br>
+
+                EXECUTER
+
+            </h1>
+
+
+            <p class="description">
+
+                Pioneer Projects Executer is a Saudi general
+                contracting company specializing in design,
+                construction and fit-out.
+
+                We deliver integrated solutions with a commitment
+                to quality, professionalism and client satisfaction.
+
+            </p>
+
+
+            <a
+                href="#about"
+                class="discover-button"
+            >
+
+                DISCOVER MORE →
+
+            </a>
+
+
+        </div>
+
+
+
+        <div class="company-label">
+
+            <span>
+                PIONEER PROJECTS EXECUTER
+            </span>
+
+            <strong>
+                Saudi Arabia
+            </strong>
+
+        </div>
+
+
+    </section>
+
 
 </body>
+
 </html>
